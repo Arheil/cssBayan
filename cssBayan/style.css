@@ -1,0 +1,115 @@
+@import url(./normalize.css);
+
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 50vw;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.container:hover details {
+  color: blueviolet;
+}
+
+.container:hover summary::after {
+  content: url(./assets/img/plus-circle-svgrepo-com.svg);
+  width: 20px;
+  margin-left: 820px;
+}
+
+details {
+  display: flex;
+  width: 100%;
+  min-height: 38px;
+  padding: 10px;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+summary {
+  display: flex;
+  white-space: nowrap;
+  padding-top: 10px;
+}
+
+
+
+
+@media (min-width: 320px) {
+  summary::after {
+    margin-left: 25px;
+  }
+}
+
+@media (max-width: 820px) {
+  summary {
+    font-size: 18px;
+  }
+
+  summary::after {
+    margin-left: 340px;
+  }
+
+  img {
+    width: 400px;
+  }
+
+  .container {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 1920px) {
+  img {
+    width: 500px;
+  }
+
+  summary {
+    font-size: 16px;
+  }
+  
+  }
+
+  @media (min-width: 1921px) {
+    .container:hover summary::after {
+      content: url(./assets/img/plus-circle-svgrepo-com.svg);
+      width: 20px;
+      color: chocolate;
+    }
+  }
+
+
+summary::-webkit-details-marker {
+  display: none;
+  
+}
+
+details[open] {
+  animation: view .5s ease-in;
+}
+
+details[open]:hover > summary::after {
+  content: '\25BC';
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+  margin: 50px auto;
+}
+
+@keyframes view {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
